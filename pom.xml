@@ -13,12 +13,6 @@
 	<name>mediclaim</name>
 	<description>Demo project for Spring Boot</description>
 		
-	<properties>
-           <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-           <sonar.host.url>http://20.124.108.87:9000</sonar.host.url>
-           <sonar.login>admin</sonar.login>
-           <sonar.password>sonarqube</sonar.password>
-        </properties>
 
 	<dependencies>
 		<dependency>
@@ -116,11 +110,6 @@
 	</distributionManagement>
 	<reporting>
           <plugins>
-          <plugin>
-              <groupId>org.owasp</groupId>
-              <artifactId>dependency-check-maven</artifactId>
-              <version>6.2.2</version>
-          </plugin>
           </plugins>
         </reporting>
 	<build>
@@ -174,27 +163,7 @@
                 <tagNameFormat>@{project.version}</tagNameFormat>
                </configuration>
 	    </plugin>
-	    <plugin>             
-              <groupId>org.owasp</groupId>
-              <artifactId>dependency-check-maven</artifactId>
-              <version>6.1.6</version>
-              <executions>
-                  <execution>
-                      <goals>
-                          <goal>check</goal>
-                      </goals>
-                  </execution>
-              </executions>
-            <configuration>  
-              <failBuildOnCVSS>11</failBuildOnCVSS>  
-              <!-- Generate all report formats -->  
-              <format>ALL</format>  
-              <!-- Don't use Nexus Analyzer -->  
-              <centralAnalyzerEnabled>false</centralAnalyzerEnabled>  
-              <!-- Am I the latest version? -->  
-              <versionCheckEnabled>true</versionCheckEnabled>  
-             </configuration>  
-            </plugin>
+	    
 
 	</plugins>
 	</build>
